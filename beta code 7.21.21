@@ -1,0 +1,208 @@
+on("chat:message",function(msg){
+	if(msg.type=="api" && msg.content.indexOf("!NPC") ==0){
+		var args = msg.content.split(" --");
+		var gender = args[1];
+		var race = args[2];
+		var occupation = args[3];
+
+		if (race == "Random"){
+			race = getTableItems("Race",1)
+		};
+		
+		if (gender == "Random"){
+			randGender = ["Male","Female"]
+			gender = randGender[Math.floor(Math.random() * randGender.length)]
+			
+		};
+		
+		if (gender == "Male"){
+			pronoun = "He"
+		};
+		
+		if (gender == "Female"){
+			pronoun = "She"
+		};
+		
+		if (occupation == "Random"){
+			occupation = getTableItems("Occupation",1)
+		};
+		
+		var age = getTableItems("Age",1);
+	
+		
+
+
+		//Dwarf//
+		
+		var maleDwarf = getTableItems("dwarfMale",1); 
+		var femaleDwarf = getTableItems("dwarfFemale",1);
+		var clanDwarf = getTableItems("dwarfClan",1);
+		var randHairDwarf = ["black","black","brown","gray","red","red"];
+		    hairDwarf = randHairDwarf[Math.floor(Math.random() * randHairDwarf.length)];
+		var randStyleDwarf = ["styled with large french braids","tied in a ponytail","worn down","with small braids in the front linked at the back","pulled up in a bun"];
+	        styleDwarf = randStyleDwarf[Math.floor(Math.random() * randStyleDwarf.length)];
+		var randClothesDwarf = ["plain, simple clothing","nice clothing, over leather armor","clothes with patches and frayed edges","colorful clothing with sparkly bits at the shoulders","dusty clothing with stains"];
+		    clothesDwarf = randClothesDwarf[Math.floor(Math.random() * randClothesDwarf.length)];
+		var randSkinDwarf = ["deep brown","light brown","light brown","light brown","deep tan","light tan","pale","pale"];
+		    skinDwarf = randSkinDwarf[Math.floor(Math.random() * randSkinDwarf.length)];
+		var randMoralsDwarf = ["good","good","good","good","good","good","good","good","neutral","neutral","neutral","evil"];
+		    moralsDwarf = randMoralsDwarf[Math.floor(Math.random() * randMoralsDwarf.length)];
+		var randObedientDwarf = ["lawful","lawful","lawful","lawful","lawful","lawful","lawful","lawful","lawful","lawful","neutral","neutral","neutral","chaotic"];
+		    obedientDwarf = randObedientDwarf[Math.floor(Math.random() * randObedientDwarf.length)];
+		var hModDwarf = randomInteger(4) + randomInteger(4);
+		var heightDwarf = 48 + hModDwarf;
+		var weightDwarf = 130 + hModDwarf * (randomInteger(6) + randomInteger(6));
+			if (race == "Dwarf" && gender == "Male"){
+				var firstName = maleDwarf};
+			if (race == "Dwarf" && gender == "Female"){
+				var firstName = femaleDwarf};
+			if (race == "Dwarf"){
+					var lastName = clanDwarf
+					var foot = heightDwarf / 12
+					var inches = heightDwarf % 12
+					var weight = weightDwarf.toString()
+					var skin = skinDwarf
+					var hair = hairDwarf
+					var clothes = clothesDwarf
+					var style = styleDwarf
+					var morals = moralsDwarf
+					var obedient = obedientDwarf
+						};
+					
+			if (race == "Dwarf" && age == "Young Adult"){
+					var years = 17 + randomInteger(33)};
+			if (race == "Dwarf" && age == "Middle-aged Adult"){
+					var years = 49 + randomInteger(100)};
+			if (race == "Dwarf" && age == "Mature Adult"){
+					var years = 149 + randomInteger(51)};
+		
+		
+		
+		//Elf//
+		
+		var maleElf = getTableItems("elfMale",1);
+		var femaleElf = getTableItems("elfFemale",1);
+		var familyElf = getTableItems("elfFamily",1);
+		var randHairElf = ["green","blue","blonde","strawbery","auburn","white","silver","blonde","strawberry","auburn","white","silver"];
+			hairElf = randHairElf[Math.floor(Math.random() * randHairElf.length)];
+		var randStylerElf = ["styled with medium sized french braids","tied in a ponytail","shoulder length, worn down ","with small braids in the front linked at the back","pulled up in a bun","cropped to fall just below the ear"];
+			styleElf = randStyleElf[Math.floor(Math.random() * randStyleElf.length)];
+		var randClothesElf = ["billowy, loose fitting robes","plain simple clothing","nice clothing over leather armor","emarald green clothing","clothing in need of some minor repairs"];
+			clothesElf = randClothesElf[Math.floor(Math.random() * randClothesElf.length)];
+		var randSkinElf = ["light tan","light tan","light tan","dark tan","dark tan","pale","pale","pale","pale","copper","bronze","bluish-white"];
+			skinElf = randSkinElf[Math.floor(Math.random() * randSkinElf.length)];
+		var randMoralsElf = ["good","good","good","good","good","good","good","good","neutral","neutral","neutral","evil"];
+		    moralsElf = randMoralsElf[Math.floor(Math.random() * randElfDwarf.length)];
+		var randObedientElf = ["lawful","neutral","neutral","chaotic","chaotic","chaotic","chaotic","chaotic"];
+		    obedientElf = randObedientElf[Math.floor(Math.random() * randObedientElf.length)];
+		var hModElf = randomInteger(10) + randomInteger(10);
+		var heightElf = 54 + hModElf;
+		var weightElf = 90 + hModElf * randomInteger(4);
+			if (race == "Elf" && gender == "Male"){
+		var firstName = maleElf};
+			if (race == "Elf" && gender == "Female"){
+		var firstName = femaleElf};
+		if (race == "Elf"){
+			var lastName = familyElf;
+			var foot = heightElf / 12
+			var inches = heightElf % 12
+		    var weight = weightElf.toString()
+			var skin = skinElf
+			var hair = hairElf
+			var clothes = clothesElf
+			var style = styleElf
+			var morals = moralsElf
+			var obedient = obedientElf
+				};
+				
+			if (race == "Elf" && age == "Young Adult"){
+					var years = 99 + randomInteger(300)};
+			if (race == "Elf" && age == "Settled Adult"){
+					var years = 399 + randomInteger(150)};
+			if (race == "Elf" && age == "Mature Adult"){
+					var years = 599 + randomInteger(51)};
+
+
+	
+		    var foot = Math.floor(foot);
+			foot.toString();
+			inches.toString();
+			years.toString();
+			var alignment = obedient + " " + morals
+
+		
+		
+		
+		
+		var sheet = createObj("character",{
+		    name:"",
+		    inplayerjournals:"all"
+		});
+		
+		
+        sheet.set("bio",firstName + " " + lastName + " is a " + age + " " + gender + " " + race + ". " + pronoun + " is a(n) " + occupation + ". " + firstName + " " + lastName + " stands about " + foot + " feet " + inches + " inches tall and looks to weigh about " + weight + " pounds. " + pronoun + " has " + skin + " skin, " + hair + " hair " + style + " and is wearing " + clothes + ".");
+        sheet.set("name",firstName + " " + lastName)
+        sheet.set("gmnotes",years + " years old " + alignment)
+
+	
+	}
+	
+	
+	log(race);
+	log(gender);
+	log(occupation);
+	log(maleDwarf);
+	log(femaleDwarf);
+	log(clanDwarf);
+	log(maleElf);
+	log(femaleElf);
+	log(familyElf);
+	log(firstName);
+	log(lastName);
+	log(heightDwarf);
+	log(weightDwarf);
+	log(weightElf);
+	log(heightElf);
+	log(weight);
+	log(foot);
+	log(inches);
+    log(years)
+	
+})
+
+
+
+function getTableItems(tableName,numItems){
+    var table = findObjs({
+        type:"rollabletable",
+        name:tableName
+    })[0];
+    
+    if (table===undefined){
+        sendChat("API",`/w gm Unable to locate a rollable table called ${tableName}`);
+        return null;
+    }
+    
+    var tableList = findObjs({
+        type:"tableitem",
+        rollabletableid:table.get("id")
+    })
+    
+    var tableItems = [];
+    var usedItems = [];
+    
+    if (numItems>tableList.length){
+        sendChat("API",`/w gm ${tableName} has fewer than ${numItems} items.`);
+        return null;
+    }
+    
+    for (i=0;i<numItems;i++){
+        var itemIndex = randomInteger(tableList.length)-1;
+        while(usedItems.includes(itemIndex)){
+            itemIndex = randomInteger(tableList.length)-1;
+        }
+        tableItems.push(tableList[itemIndex].get("name"));
+        usedItems.push(itemIndex);
+    }
+    return tableItems;
+}
