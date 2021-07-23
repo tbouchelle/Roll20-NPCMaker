@@ -28,6 +28,7 @@ on("chat:message",function(msg){
 		};
 		
 		var age = getTableItems("Age",1);
+		var accent;
 	
 		
 
@@ -67,6 +68,7 @@ on("chat:message",function(msg){
 					var style = styleDwarf
 					var morals = moralsDwarf
 					var obedient = obedientDwarf
+					var accent = "Scottish"
 						};
 					
 			if (race == "Dwarf" && age == "Young Adult"){
@@ -113,6 +115,7 @@ on("chat:message",function(msg){
 			var style = styleElf
 			var morals = moralsElf
 			var obedient = obedientElf
+			var accent = "British"
 				};
 				
 			if (race == "Elf" && age == "Young Adult"){
@@ -157,6 +160,7 @@ on("chat:message",function(msg){
 					var style = styleHalfling
 					var morals = moralsHalfling
 					var obedient = obedientHalfling
+					var accent = "Irish"
 						};
 					
 			if (race == "Halfling" && age == "Young Adult"){
@@ -201,6 +205,7 @@ on("chat:message",function(msg){
 					var style = styleEnglishHuman
 					var morals = moralsEnglishHuman
 					var obedient = obedientEnglishHuman
+					var accent = "British"
 						};
 					
 			if (race == "English Human" && age == "Young Adult"){
@@ -250,6 +255,7 @@ on("chat:message",function(msg){
 					var style = styleCelticHuman
 					var morals = moralsCelticHuman
 					var obedient = obedientCelticHuman
+					var accent = "Irish"
 						};
 					
 			if (race == "Celtic Human" && age == "Young Adult"){
@@ -300,6 +306,7 @@ on("chat:message",function(msg){
 					var style = styleNordicHuman
 					var morals = moralsNordicHuman
 					var obedient = obedientNordicHuman
+					var accent = "Nordic"
 						};
 					
 			if (race == "Nordic Human" && age == "Young Adult"){
@@ -332,7 +339,7 @@ on("chat:message",function(msg){
 		
         sheet.set("bio",firstName + " " + lastName + " is a " + age + " " + gender + " " + race + ". " + pronoun + " is a(n) " + occupation + ". " + firstName + " " + lastName + " stands about " + foot + " feet " + inches + " inches tall and looks to weigh about " + weight + " pounds. " + pronoun + " has " + skin + " skin, " + hair + " hair " + style + " and is wearing " + clothes + ".");
         sheet.set("name",firstName + " " + lastName)
-        sheet.set("gmnotes",years + " years old " + alignment)
+        sheet.set("gmnotes",years + " years old. " + alignment + "; Speaks with a " + accent + " accent.")
 
 	
 	}
@@ -356,7 +363,8 @@ on("chat:message",function(msg){
 	log(weight);
 	log(foot);
 	log(inches);
-    log(years)
+    log(years);
+    log(accent);
 	
 })
 
