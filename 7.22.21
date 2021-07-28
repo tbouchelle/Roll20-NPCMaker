@@ -16,11 +16,11 @@ on("chat:message",function(msg){
 		};
 		
 		if (gender == "Male"){
-			pronoun = "He"
+			var pronoun = "He"
 		};
 		
 		if (gender == "Female"){
-			pronoun = "She"
+			var pronoun = "She"
 		};
 		
 		if (occupation == "Random"){
@@ -76,7 +76,9 @@ on("chat:message",function(msg){
 			if (race == "Dwarf" && age == "Middle-Aged Adult"){
 					var years = 49 + randomInteger(100)};
 			if (race == "Dwarf" && age == "Mature Adult"){
-					var years = 149 + randomInteger(51)};
+					var years = 149 + randomInteger(51)
+					var hair = "gray"
+					};
 		
 		
 		
@@ -168,7 +170,9 @@ on("chat:message",function(msg){
 			if (race == "Halfling" && age == "Middle-Aged Adult"){
 					var years = 39 + randomInteger(90)};
 			if (race == "Halfling" && age == "Mature Adult"){
-					var years = 129 + randomInteger(61)};
+					var years = 129 + randomInteger(61)
+					var hair = "gray"
+					};
 
 	//English Human//
 		
@@ -213,7 +217,9 @@ on("chat:message",function(msg){
 			if (race == "English Human" && age == "Middle-Aged Adult"){
 					var years = 38 + randomInteger(22)};
 			if (race == "English Human" && age == "Mature Adult"){
-					var years = 61 + randomInteger(30)};
+					var years = 61 + randomInteger(30)
+					var hair = "gray"
+					};
 					
 			if (race =="English Human"){
 			        race = "Human"
@@ -263,7 +269,9 @@ on("chat:message",function(msg){
 			if (race == "Celtic Human" && age == "Middle-Aged Adult"){
 					var years = 38 + randomInteger(22)};
 			if (race == "Celtic Human" && age == "Mature Adult"){
-					var years = 61 + randomInteger(30)};
+					var years = 61 + randomInteger(30)
+					var hair = "gray"
+					};
 
         	if (race =="Celtic Human"){
 			        race = "Human"
@@ -314,7 +322,9 @@ on("chat:message",function(msg){
 			if (race == "Nordic Human" && age == "Middle-Aged Adult"){
 					var years = 38 + randomInteger(22)};
 			if (race == "Nordic Human" && age == "Mature Adult"){
-					var years = 61 + randomInteger(30)};
+					var years = 61 + randomInteger(30)
+					var hair = "gray"
+					};
 					
 			if (race =="Nordic Human"){
 			        race = "Human"
